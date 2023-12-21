@@ -154,13 +154,13 @@ class App(customtkinter.CTk):
 
        # create canvas 
         self.right_frame = customtkinter.CTkCanvas(
-            self, width = 250, bg="red" )
+            self, width = 250, bg="lightblue")
         # self.right_frame.grid_columnconfigure(0, weight=1)
         
         self.right_frame.grid(row=0, column=1, padx=(20, 0), pady=(20, 0), sticky="nsew")
 
        
-        self.appearance_mode_optionemenu.set("Dark")
+        self.appearance_mode_optionemenu.set("Light")
         self.scaling_optionemenu.set("100%")
        
         # self.textbox.insert("0.0", "CTkTextbox\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n\n" * 20)
@@ -178,14 +178,14 @@ class App(customtkinter.CTk):
         )
 
         self.shpFile = filename
-        print(filename)
+        # print(filename)
 
     
 
     def open_input_dialog_event(self):
         dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
         self.parcelNumber=int(dialog.get_input())
-        print("parcelNumber: ", self.parcelNumber)
+        # print("parcelNumber: ", self.parcelNumber)
         # print("CTkInputDialog:", dialog.get_input())
 
     def change_appearance_mode_event(self, new_appearance_mode: str):
@@ -273,8 +273,8 @@ class App(customtkinter.CTk):
         self.scroll_bar_list.append(sbar4)
 
         dk = list(self.centroid_dict.keys())
-        print(self.centroid_dict.keys())
-        print(dk)
+        # print(self.centroid_dict.keys())
+        # print(dk)
         dv = list(self.centroid_dict.values())
         input_parcel = int(self.parcelNumber)
 
@@ -371,7 +371,7 @@ class App(customtkinter.CTk):
         for rec in sf.shapeRecords():
             record_dict[rec.record[0]] = rec
 
-        print("get_object_id_from_parcel_no: ", input_parcel, record_dict )
+        # print("get_object_id_from_parcel_no: ", input_parcel, record_dict )
         k = self.get_object_id_from_parcel_no(input_parcel, record_dict)
 
 
