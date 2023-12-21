@@ -13,85 +13,6 @@ import math
 import subprocess
 from PIL import ImageTk
 
-
-'''
-# Create a new style for the GUI
-style = ttk.Style()
-style.theme_create("custom_style", parent="clam", settings={
-    "TButton": {
-        "configure": {"background": "#3498db", "foreground": "white", "font": ('Arial', 12)},
-        "map": {"background": [("active", "#2980b9")]}
-    },
-    "TEntry": {
-        "configure": {"font": ('Arial', 12)}
-    },
-    "TLabel": {
-        "configure": {"font": ('Arial', 12)}
-    }
-})
-style.theme_use("custom_style")
-
-root = Tk()
-
-W = str(root.winfo_screenwidth())
-H = str(root.winfo_screenheight())
-root.configure(width=W, height=H, bg="#2ecc71")  # Background color changed to a green shade
-root.title("Modified Boundary Parcel Delination")
-
-v = StringVar()
-
-left_frame = Frame(root, width=400, height=1000, bg='#3498db')  # Background color changed to a blue shade
-left_frame.grid(row=0, column=0, padx=10, pady=5)
-
-self.right_frame = Frame(root, width=750, height=500, bg='#ecf0f1')  # Background color changed to a light gray shade
-right_frame.grid(row=0, column=1, padx=10, pady=5, sticky="nsew")
-
-fig = Figure(figsize=(6, 6))
-canvas = FigureCanvasTkAgg(fig, master=right_frame)
-
-tool_bar = Frame(left_frame, width=180, height=185)
-toolbar = Frame(left_frame, width=180, height=185)
-tool_bar.grid(row=2, column=0, padx=5, pady=5)
-toolbar.grid(row=10, column=0, padx=5, pady=20)
-
-label_filename = ttk.Label(tool_bar, text="Select shape file(.shp)")
-label_filename.grid(row=0, column=0, padx=5, pady=3, ipadx=10)
-
-e1 = ttk.Entry(tool_bar, textvariable=v)
-e1.grid(row=1, column=0)
-
-button_browse = ttk.Button(tool_bar, text="Browse", command=set_select_file, style='TButton')
-button_browse.grid(row=2, column=0, padx=5, pady=5)
-button_browse.bind("<Enter>", on_hover)
-button_browse.bind("<Leave>", on_leave)
-
-label_parcel_number = ttk.Label(tool_bar, text="Parcel Number")
-label_parcel_number.grid(row=3, column=0, padx=5, pady=3, ipadx=10)
-
-e2 = ttk.Entry(tool_bar)
-e2.grid(row=4, column=0)
-
-button_show = ttk.Button(tool_bar, text="Show", style='TButton')
-button_show.grid(row=5, column=0, pady=4, ipadx=10)
-button_show.bind("<Enter>", on_hover)
-button_show.bind("<Leave>", on_leave)
-
-button_quit = ttk.Button(tool_bar, text="Quit", command=root.quit, style='TButton')
-button_quit.grid(row=6, column=0, pady=4, ipadx=10)
-button_quit.bind("<Enter>", on_hover)
-button_quit.bind("<Leave>", on_leave)
-
-button_display_parcel = ttk.Button(toolbar, text="Show Parcel Direction", command=get_ewns_parcel, style='TButton')
-button_display_parcel.grid(row=6, column=0, pady=4, ipadx=10)
-button_display_parcel.bind("<Enter>", on_hover)
-button_display_parcel.bind("<Leave>", on_leave)
-
-label_output = ttk.Label(toolbar, text="Output")
-label_output.grid(row=0, column=0, padx=5, pady=5)
-
-root.mainloop()
-'''
-
 import tkinter as tk
 import tkinter.messagebox
 from tkinter import filedialog as fd 
@@ -147,10 +68,6 @@ class App(customtkinter.CTk):
         self.scaling_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame, values=["80%", "90%", "100%", "110%", "120%"],
                                                                command=self.change_scaling_event)
         self.scaling_optionemenu.grid(row=10, column=0, padx=20, pady=(10, 20))
-
-       # create textbox
-        # self.textbox = customtkinter.CTkTextbox(self, width=250)
-        # self.textbox.grid(row=0, column=1, padx=(20, 0), pady=(20, 0), sticky="nsew")
 
        # create canvas 
         self.right_frame = customtkinter.CTkCanvas(
