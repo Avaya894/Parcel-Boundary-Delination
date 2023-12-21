@@ -4,7 +4,9 @@ click==8.1.7
 click-plugins==1.1.1
 cligj==0.7.2
 contourpy==1.2.0
+customtkinter==5.2.1
 cycler==0.12.1
+darkdetect==0.3.1
 fiona==1.9.5
 fonttools==4.47.0
 geopandas==0.14.1
@@ -22,7 +24,5 @@ pytz==2023.3.post1
 shapely==2.0.2
 six==1.16.0
 tk==0.1.0
+typing_extensions==4.4.0
 tzdata==2023.3
-darkdetect~=0.3.1
-typing-extensions~=4.4.0
-packaging
